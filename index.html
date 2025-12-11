@@ -95,7 +95,7 @@
 
                 <!-- Github link -->
                 <span class="link-block">
-                  <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                  <a href="https://anonymous.4open.science/r/Proj-2531" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -122,28 +122,13 @@
     </div>
   </section>
 
-  <!-- Teaser video-->
-  <!-- <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <video poster="" id="tree" autoplay controls muted loop height="100%">
-          <source src="static/videos/banner_video.mp4"
-          type="video/mp4">
-        </video>
-        <h2 class="subtitle has-text-centered">
-          Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-        </h2>
-      </div>
-    </div>
-  </section> -->
-
   <!-- Teaser Image -->
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
         <img src="static/images/Fig00.jpg" alt="sss">
         <h2 class="subtitle has-text-justified">
-          Upon detecting an unexpected obstacle obstructing the current trajectory (blue), the proposed planner rapidly generates a new, safe trajectory (yellow) in 250 ms, replacing the colliding segment to avoid the imminent collision and reach the goal.
+          Upon detecting a suddenly appearing obstacle obstructing the current trajectory (blue), the proposed reactive planner rapidly generates a new, safe trajectory (yellow) in 250 ms to avoid the imminent collision and reach the goal.
         </h2>
       </div>
     </div>
@@ -157,7 +142,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Non-prehensile transportation by robotic arms is a promising approach for the service industry. Such applications require robotic arms to be reactive, safe, and flexible enough to navigate dynamic and complex environments while maintaining the transported objects' stability. However, existing limited-horizon motion control methods are often ineffective in these scenarios. This letter presents a risk-adaptive motion planning framework for safe and resilient non-prehensile object transportation. This adaptability is achieved through a three-level safety mechanism that responds to time-to-collision risk estimates with replanning, a planned graceful safety stop, or a hardware-level emergency stop. The former two maneuvers are powered by an efficient trajectory generator, integrating constrained path planning, trajectory parameterization, and refinement. The key to its efficiency lies in decomposing the complex dynamics-based trajectory refinement problem into two simpler kinematics-based subproblems, which significantly accelerates computation. In addition to the safety mechanism, the framework incorporates a periodic replanning mechanism to proactively adapt to dynamic goal switching. Finally, the effectiveness and resilience of this framework are validated through extensive experiments.
+              Non-prehensile transportation by robotic arms is a promising approach for the service industry. Such applications require robotic arms to be reactive, safe, and flexible enough to navigate dynamically changing and complex environments while maintaining the transported objects' stability. However, existing limited-horizon motion control methods are often ineffective in these scenarios. This letter presents a risk-adaptive motion planning framework for safe and resilient non-prehensile object transportation. To adapt to disturbances in quasi-static environments, the framework integrates a three-level safety mechanism that responds to predicted time-to-collision with replanning, a planned graceful safety stop, or a hardware-level emergency stop. The former two maneuvers rely on an efficient trajectory generator that integrates constrained path planning, trajectory parameterization, and refinement. Specifically, the constrained path planner is employed to provide global guidance in complex environments, yielding a high-quality initialization for the subsequent coarse-to-fine trajectory generation strategy. Additionally, the framework incorporates a periodic replanning strategy to proactively adapt to dynamic goal switching and environmental changes. Finally, the framework is comprehensively evaluated through extensive experiments.
             </p>
           </div>
         </div>
@@ -170,13 +155,13 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3">System Overview</h2>
+          <h2 class="title is-3">1. System Overview</h2>
           <img src="static/images/Fig01.jpg" 
               alt="System architecture diagram of the replanning framework"
               style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
           <div class="content has-text-justified">
             <p>
-              Architecture of the risk-adaptive motion planning framework, featuring a dual-triggering mechanism (periodic and safety-driven) and a complete trajectory generation pipeline, which integrates constrained path planning, trajectory parameterization, and trajectory refinement.
+              Risk-adaptive motion planning framework, featuring a dual-triggering mechanism (periodic and safety-driven) and a complete trajectory generation pipeline, which integrates constrained path planning, trajectory parameterization, and trajectory refinement.
             </p>
           </div>
         </div>
@@ -188,12 +173,12 @@
   <section class="section">
     <div class="container is-max-desktop">
       <p class="has-text-centered is-size-6">
-        Note: All videos below are shown at their original speed (× 1) without any speed adjustments.
+        Note: All videos are shown at real-time speed (1x) unless otherwise stated.
       </p>
       
       <!------------------------------------- 对比实验 ------------------------------------->
       <div class="container mt-6">
-        <h2 class="title is-3 has-text-centered">Benchmark Comparisons</h2>
+        <h2 class="title is-3 has-text-centered">2. Benchmark Comparisons</h2>
 
         <!-- Subtitle/Description (Updated for the new layout) -->
         <p class="content has-text-centered mb-5">
@@ -274,7 +259,7 @@
 
       <!------------------------------------- 反应测试 ------------------------------------->
       <div class="container mt-6"> <!-- mt-6 增加一个大的上边距，和上面分开 -->
-        <h3 class="title is-3 has-text-centered mb-4">Reactivity Test</h3>
+        <h3 class="title is-3 has-text-centered mb-4">3. Reactivity Test</h3>
 
         <p class="content has-text-centered mb-5">
           The performance of the replanning framework is evaluated in dynamic environments.
@@ -307,7 +292,7 @@
 
       <!------------------------------------- 鲁棒实验 ------------------------------------->
       <div class="container mt-6">
-        <h3 class="title is-3 has-text-centered mb-4">Robustness Test</h3>
+        <h3 class="title is-3 has-text-centered mb-4">4. Robustness Test</h3>
         <p class="content has-text-centered mb-5">
           We evaluate the robustness of our method against CoM displacement under varying levels of motion aggressiveness.
         </p>
@@ -389,7 +374,7 @@
 
       <!------------------------------------- 失效案例 ------------------------------------->
       <div class="container mt-6"> <!-- mt-6 增加一个大的上边距，和上面分开 -->
-        <h3 class="title is-3 has-text-centered mb-4">Failure Cases</h3>
+        <h3 class="title is-3 has-text-centered mb-4">5. Failure Cases</h3>
 
         <p class="content has-text-centered mb-5">
           For the cuboid (5 × 5 × 20 cm) with a tipping margin angle β ≈ 14.0°, the constraint violation is insufficient to induce tipping. However, for a slender cuboid 2.5 × 2.5 × 30 cm,  β ≈ 4.8°, the risk of tipping increases significantly.
@@ -426,11 +411,11 @@
       <!------------------------------------- 实物实验 ------------------------------------->
       <div class="container mt-6">
         <!-- Section Title -->
-        <h2 class="title is-3 has-text-centered">Real-World Experiments</h2>
+        <h2 class="title is-3 has-text-centered">6. Real-World Experiments</h2>
 
         <!-- Optional Description -->
         <p class="content has-text-centered mb-5">
-          Finally, real-world experiments validate the proposed method.
+          Finally, the proposed framework is evaluated in a series of challenging real-world scenarios. First, we examine the performance across various tipping margin angles and motion aggressiveness levels. The following video is shown at 4x speed.
         </p>
 
         <div class="mt-6"> <!-- 增加一点上边距，和主图分开 -->
@@ -520,19 +505,19 @@
           </div>
         </div>
 
-        <div class="columns is-centered">
-          <div class="column">
+        <div class="columns is-centered mt-4">
+          <div class="column is-four-fifths">
             <figure class="image">
               <img src="static/images/成功率.jpg" alt="Overview of the robustness test setup">
             </figure>
-            <p class="has-text-centered has-text-weight-semibold mt-2">
+            <p class="has-text-centered has-text-weight-semibold">
               Success rates across various tipping margin angles and motion aggressiveness levels.
             </p>
           </div>
         </div>
 
         <p class="content has-text-centered mb-5">
-          The nominal stable-contact constraints derived from the simulated cuboid (5 × 5 × 20 cm) are applied directly to all real-world trials without modification. Therefore, the following experiment can also be considered a test of robustness to parametric uncertainty.
+          Subsequently, the reactivity and robustness of our method are evaluated by executing non-prehensile transportation of a slender bottle, milk cartons, and a partially filled water cup in a quasi-static environment. Notably, the implementation remains based on the cuboid model (5 × 5 × 20 cm) without object-specific parameter tuning.
         </p>
 
         <!-- Row 1: Two videos side-by-side -->
@@ -575,61 +560,60 @@
       </div>
 
       <!------------------------------------- 其他实验 ------------------------------------->
-        <div class="container mt-6">
-          <!-- Section Title -->
-          <h2 class="title is-3 has-text-centered">Generalization to a Different Platform</h2>
+      <div class="container mt-6">
+        <!-- Section Title -->
+        <h2 class="title is-3 has-text-centered">7. Generalization to a Different Platform</h2>
 
-          <!-- Descriptive Paragraph -->
-          <p class="content has-text-centered mb-5">
-            To demonstrate the versatility and hardware-agnostic nature of our framework, we conducted further experiments on a <strong>Rokae XMate CR20</strong> robotic arm. The results show that our method can be readily applied to different hardware with minimal adaptation.
-          </p>
+        <!-- Descriptive Paragraph -->
+        <p class="content has-text-centered mb-5">
+          To demonstrate the versatility and hardware-agnostic nature of our framework, we conducted further experiments on a <strong>Rokae XMate CR20</strong> robotic arm. The results show that our method can be readily applied to different hardware with minimal adaptation.
+        </p>
 
-          <!-- Row 1: One single, centered video -->
-          <div class="columns is-centered">
-            <div class="column"> <!-- is-half makes it the same width as the videos below -->
-              <figure class="image is-16by9">
-                <iframe class="has-ratio" src="https://www.youtube.com/embed/LUqR58Fo27I" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-              </figure>
-              <p class="has-text-centered has-text-weight-semibold mt-2">Non-prehensile transportation in extremely cluttered environments</p>
-            </div>
-          </div>
-
-          <div class="columns is-centered">
-            <!-- Video 2 -->
-            <div class="column">
-              <figure class="image is-16by9">
-                <iframe class="has-ratio" src="https://www.youtube.com/embed/E5qfaUXOia0" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-              </figure>
-              <p class="has-text-centered has-text-weight-semibold mt-2">Transport two slender water bottles</p>
-            </div>
-            <!-- Video 3 -->
-            <div class="column">
-              <figure class="image is-16by9">
-                <iframe class="has-ratio" src="https://www.youtube.com/embed/FGJuH7HHFg4" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-              </figure>
-              <p class="has-text-centered has-text-weight-semibold mt-2">Transport three slender water bottles</p>
-            </div>
-          </div>
-
-          <!-- Row 2: Two videos side-by-side -->
-          <div class="columns is-centered">
-            <!-- Video 4 -->
-            <div class="column">
-              <figure class="image is-16by9">
-                <iframe class="has-ratio" src="https://www.youtube.com/embed/l4MQq1UUQk0" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-              </figure>
-              <p class="has-text-centered has-text-weight-semibold mt-2">Transport two objects stacked vertically (front view)</p>
-            </div>
-            <!-- Video 5 -->
-            <div class="column">
-              <figure class="image is-16by9">
-                <iframe class="has-ratio" src="https://www.youtube.com/embed/EanWOZ3j5jg" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-              </figure>
-              <p class="has-text-centered has-text-weight-semibold mt-2">Transport two objects stacked vertically (side view)</p>
-            </div>
+        <!-- Row 1: One single, centered video -->
+        <div class="columns is-centered">
+          <div class="column"> <!-- is-half makes it the same width as the videos below -->
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" src="https://www.youtube.com/embed/LUqR58Fo27I" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </figure>
+            <p class="has-text-centered has-text-weight-semibold mt-2">Non-prehensile transportation in extremely cluttered environments</p>
           </div>
         </div>
 
+        <div class="columns is-centered">
+          <!-- Video 2 -->
+          <div class="column">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" src="https://www.youtube.com/embed/E5qfaUXOia0" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </figure>
+            <p class="has-text-centered has-text-weight-semibold mt-2">Transport two slender water bottles</p>
+          </div>
+          <!-- Video 3 -->
+          <div class="column">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" src="https://www.youtube.com/embed/FGJuH7HHFg4" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </figure>
+            <p class="has-text-centered has-text-weight-semibold mt-2">Transport three slender water bottles</p>
+          </div>
+        </div>
+
+        <!-- Row 2: Two videos side-by-side -->
+        <div class="columns is-centered">
+          <!-- Video 4 -->
+          <div class="column">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" src="https://www.youtube.com/embed/l4MQq1UUQk0" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </figure>
+            <p class="has-text-centered has-text-weight-semibold mt-2">Transport two objects stacked vertically (front view)</p>
+          </div>
+          <!-- Video 5 -->
+          <div class="column">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" src="https://www.youtube.com/embed/EanWOZ3j5jg" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </figure>
+            <p class="has-text-centered has-text-weight-semibold mt-2">Transport two objects stacked vertically (side view)</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -637,12 +621,10 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3">Conclusion</h2>
+          <h2 class="title is-3">8. Conclusion</h2>
           <div class="content has-text-justified">
             <p>
-              This paper presents a risk-adaptive motion planning framework that enables safe, efficient, and resilient non-prehensile object transportation. The core contribution of this framework is its dual mechanism: a three-level safety mechanism to handle imminent threats, and a periodic replanning mechanism to proactively adapt to dynamic goal switching. Both mechanisms are powered by an efficient trajectory generator that integrates constrained path planning, trajectory parameterization, and two-stage trajectory refinement. The effectiveness and resilience of this framework are rigorously validated in both simulations and real-world experiments.
-
-              Despite its effectiveness, our method has limitations. First, the contact model neglects angular acceleration, which can result in slipping or tipping during aggressive motion. This risk is exacerbated by parametric uncertainties, such as an unmodeled CoM position, which can render trajectories deemed safe by the planner infeasible in practice. Additionally, the current approach is not yet capable of handling continuously moving obstacles, for two primary reasons: (1) The front-end path planner cannot yet leverage their spatio-temporal information; (2) There is no unified, time‑aware map available for them. Furthermore, the robotic arm's full autonomy is limited by its reliance on the motion-capture system. Future work will focus on developing a parameter-robust planner and a fully autonomous system to address these issues.
+              This letter presents a risk-adaptive framework for non-prehensile transportation in quasi-static environments subject to dynamic disturbances. To enhance reactivity and resilience, the framework integrates a three-level safety mechanism with proactive periodic replanning. The underlying planning pipeline employs a hierarchical coarse-to-fine architecture, where a constrained path planner provides global guidance and an unconstrained optimizer refines the trajectory, effectively balancing trajectory quality and planning efficiency. Extensive experiments demonstrate the framework's efficiency and robustness. Future work will aim to address the identified limitations and extend the approach to dynamic environments.
             </p>
           </div>
         </div>
@@ -656,7 +638,7 @@
   <!-- 参考文献 -->
   <section class="section">
     <div class="container is-max-desktop content">
-      <h2 class="title">References</h2>
+      <h2 class="title has-text-centered">References</h2>
       <ol type="1">
         <!-- 你的参考文献 -->
         <li id="ref1">
