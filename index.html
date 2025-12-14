@@ -128,7 +128,7 @@
       <div class="hero-body">
         <img src="static/images/Fig00.jpg" alt="sss">
         <h2 class="subtitle has-text-justified">
-          Upon detecting a suddenly appearing obstacle obstructing the current trajectory (blue), the proposed reactive planner rapidly generates a new, safe trajectory (yellow) in 250 ms to avoid the imminent collision and reach the goal.
+          Fig. 1. Upon detecting a suddenly appearing obstacle blocking the current trajectory (blue), the reactive planner rapidly generates a new, safe trajectory (yellow) in 250 ms to avoid the imminent collision and reach the goal.
         </h2>
       </div>
     </div>
@@ -142,7 +142,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Non-prehensile transportation by robotic arms is a promising approach for the service industry. Such applications require robotic arms to be reactive, safe, and flexible enough to navigate dynamically changing and complex environments while maintaining the transported objects' stability. However, existing limited-horizon motion control methods are often ineffective in these scenarios. This letter presents a risk-adaptive motion planning framework for safe and resilient non-prehensile object transportation. To adapt to disturbances in quasi-static environments, the framework integrates a three-level safety mechanism that responds to predicted time-to-collision with replanning, a planned graceful safety stop, or a hardware-level emergency stop. The former two maneuvers rely on an efficient trajectory generator that integrates constrained path planning, trajectory parameterization, and refinement. Specifically, the constrained path planner is employed to provide global guidance in complex environments, yielding a high-quality initialization for the subsequent coarse-to-fine trajectory generation strategy. Additionally, the framework incorporates a periodic replanning strategy to proactively adapt to dynamic goal switching and environmental changes. Finally, the framework is comprehensively evaluated through extensive experiments.
+              Non-prehensile transportation using robotic arms presents a promising solution for the service industry. Such applications require robotic arms to be reactive, safe, and flexible enough to navigate uncertain and complex environments while maintaining the transported objects' stability. However, existing methods are often ineffective in these scenarios. In this letter, a risk-adaptive motion planning framework is proposed for safe and resilient non-prehensile object transportation. Specifically, the risk is evaluated via the predicted time-to-collision (TTC), and is responded to through a three-level safety mechanism, i.e., replanning, safe stop planning, or hardware-level emergency stop. Notably, the first two levels rely on an efficient trajectory generator that integrates constrained path planning, trajectory parameterization, and refinement. In this generation pipeline, a constrained path planner provides global guidance in complex environments, serving as a high-quality initialization for the subsequent coarse-to-fine trajectory optimization. In addition to the TTC-triggered replanning, this framework incorporates a periodic replanning strategy to proactively adapt to dynamic goal switching and environmental changes. Finally, the framework is evaluated through extensive experiments.
             </p>
           </div>
         </div>
@@ -156,12 +156,10 @@
       <div class="columns is-centered has-text-centered">
         <div class="column">
           <h2 class="title is-3">1. System Overview</h2>
-          <img src="static/images/Fig01.jpg" 
-              alt="System architecture diagram of the replanning framework"
-              style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+          <img src="static/images/Fig01.jpg" alt="System architecture diagram of the replanning framework" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
           <div class="content has-text-justified">
             <p>
-              Risk-adaptive motion planning framework, featuring a dual-triggering mechanism (periodic and safety-driven) and a complete trajectory generation pipeline, which integrates constrained path planning, trajectory parameterization, and trajectory refinement.
+              Fig. 2. Risk-adaptive motion planning framework, featuring a dual-triggering mechanism (periodic and safety-driven) and a complete trajectory generation pipeline, which integrates constrained path planning, trajectory parameterization, and trajectory refinement.
             </p>
           </div>
         </div>
@@ -181,7 +179,7 @@
         <h2 class="title is-3 has-text-centered">2. Benchmark Comparisons</h2>
 
         <!-- Subtitle/Description (Updated for the new layout) -->
-        <p class="content has-text-centered mb-5">
+        <p class="content has-text-justified mb-5">
           We compare our method (left) with a strong reactive baseline (right) adapted from an MPC approach <a href="#ref1">[1]</a> in four scenarios.
         </p>
         <!-- ROW 1: Scenario 1 Comparison -->
@@ -261,7 +259,7 @@
       <div class="container mt-6"> <!-- mt-6 增加一个大的上边距，和上面分开 -->
         <h3 class="title is-3 has-text-centered mb-4">3. Reactivity Test</h3>
 
-        <p class="content has-text-centered mb-5">
+        <p class="content has-text-justified mb-5">
           The performance of the replanning framework is evaluated in dynamic environments.
         </p>
 
@@ -293,17 +291,17 @@
       <!------------------------------------- 鲁棒实验 ------------------------------------->
       <div class="container mt-6">
         <h3 class="title is-3 has-text-centered mb-4">4. Robustness Test</h3>
-        <p class="content has-text-centered mb-5">
+        <p class="content has-text-justified mb-5">
           We evaluate the robustness of our method against CoM displacement under varying levels of motion aggressiveness.
         </p>
 
-        <div class="columns is-centered">
+        <div class="columns is-centered mt-4">
           <div class="column">
             <figure class="image">
               <img src="static/images/Fig22.jpg" alt="Overview of the robustness test setup">
             </figure>
-            <p>
-              Robustness evaluation against position deviations, tested at three aggressiveness levels (low, medium, and high). (a-c) Heatmaps show the deviation between the actual and nominal contact force angles, resulting from the applied CoM position deviations. (d) The experimental setup. (e) Corresponding success rates.
+            <p class="has-text-justified">
+              Fig. 3. Robustness evaluation against position deviations, tested at three aggressiveness levels (low, medium, and high). (a-c) Heatmaps show the deviation between the actual and nominal contact force angles, resulting from the applied CoM position deviations. (d) The experimental setup. (e) Corresponding success rates.
             </p>
           </div>
         </div>
@@ -372,11 +370,24 @@
         </div>
       </div>
 
+      <p class="content has-text-justified mt-5 mb-5">
+        We further increased the motion aggressiveness and conducted non-prehensile transportation experiments. It can be observed that the manipulator leverages rotational motion to effectively mitigate the shear force acting on the transported object.
+      </p>
+
+      <div class="columns is-centered">
+        <div class="column"> <!-- is-half makes it the same width as the videos below -->
+          <figure class="image is-16by9">
+            <iframe class="has-ratio" src="https://www.youtube.com/embed/AsGxGWxtcTc" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+          </figure>
+          <p class="has-text-centered has-text-weight-semibold mt-2">Non-prehensile transportation with extreme aggressiveness</p>
+        </div>
+      </div>
+
       <!------------------------------------- 失效案例 ------------------------------------->
       <div class="container mt-6"> <!-- mt-6 增加一个大的上边距，和上面分开 -->
         <h3 class="title is-3 has-text-centered mb-4">5. Failure Cases</h3>
 
-        <p class="content has-text-centered mb-5">
+        <p class="content has-text-justified mb-5">
           For the cuboid (5 × 5 × 20 cm) with a tipping margin angle β ≈ 14.0°, the constraint violation is insufficient to induce tipping. However, for a slender cuboid 2.5 × 2.5 × 30 cm,  β ≈ 4.8°, the risk of tipping increases significantly.
         </p>
 
@@ -414,7 +425,7 @@
         <h2 class="title is-3 has-text-centered">6. Real-World Experiments</h2>
 
         <!-- Optional Description -->
-        <p class="content has-text-centered mb-5">
+        <p class="content has-text-justified mb-5">
           Finally, the proposed framework is evaluated in a series of challenging real-world scenarios. First, we examine the performance across various tipping margin angles and motion aggressiveness levels. The following video is shown at 4x speed.
         </p>
 
@@ -510,13 +521,13 @@
             <figure class="image">
               <img src="static/images/成功率.jpg" alt="Overview of the robustness test setup">
             </figure>
-            <p class="has-text-centered has-text-weight-semibold">
-              Success rates across various tipping margin angles and motion aggressiveness levels.
+            <p class="has-text-centered">
+              Fig. 4. Success rates across various tipping margin angles and motion aggressiveness levels.
             </p>
           </div>
         </div>
 
-        <p class="content has-text-centered mb-5">
+        <p class="content has-text-justified mb-5">
           Subsequently, the reactivity and robustness of our method are evaluated by executing non-prehensile transportation of a slender bottle, milk cartons, and a partially filled water cup in a quasi-static environment. Notably, the implementation remains based on the cuboid model (5 × 5 × 20 cm) without object-specific parameter tuning.
         </p>
 
@@ -565,7 +576,7 @@
         <h2 class="title is-3 has-text-centered">7. Generalization to a Different Platform</h2>
 
         <!-- Descriptive Paragraph -->
-        <p class="content has-text-centered mb-5">
+        <p class="content has-text-justified mb-5">
           To demonstrate the versatility and hardware-agnostic nature of our framework, we conducted further experiments on a <strong>Rokae XMate CR20</strong> robotic arm. The results show that our method can be readily applied to different hardware with minimal adaptation. 
         </p>
 
@@ -624,16 +635,13 @@
           <h2 class="title is-3">8. Conclusion</h2>
           <div class="content has-text-justified">
             <p>
-              This letter presents a risk-adaptive framework for non-prehensile transportation in quasi-static environments subject to dynamic disturbances. To enhance reactivity and resilience, the framework integrates a three-level safety mechanism with proactive periodic replanning. The underlying planning pipeline employs a hierarchical coarse-to-fine architecture, where a constrained path planner provides global guidance and an unconstrained optimizer refines the trajectory, effectively balancing trajectory quality and planning efficiency. Extensive experiments demonstrate the framework's efficiency and robustness. Future work will aim to address the identified limitations and extend the approach to dynamic environments.
+              This letter presents a risk-adaptive framework for reliable non-prehensile transportation in quasi-static environments. To ensure reactivity and resilience, the framework integrates a three-level safety mechanism with proactive periodic replanning. These mechanisms rely on a hierarchical trajectory generator that incorporates constrained path planning, trajectory parameterization, and a two-stage trajectory optimization process. Extensive experiments demonstrate the framework's efficiency and robustness. Future work will: 1) extend the framework to mobile manipulation for large-scale transportation; 2) improve computational efficiency via parallel computing; and 3) enhance system robustness against uncertainties.
             </p>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-
-
 
   <!-- 参考文献 -->
   <section class="section">
