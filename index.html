@@ -50,19 +50,15 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">
-              <span>Reactive Motion Planning with Global Guidance for Non-Prehensile</span><br>
-              <span>Object Transportation in Cluttered Environments</span>
+              <span>Globally Guided Reactive Motion Planning for Non-Prehensile</span><br>
+              <span>Transport in Cluttered Space</span>
             </h1>
             <!-- Paper authors -->
-            <!-- <div class="is-size-5 publication-authors">
+            <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                Bing Zhao, Qing Gao<sup>&#9993;</sup>, Xiaolong Yu, Mingxuan Zhang, Xinyang Tian, Renluan Hou, Jin Wang
               </span>
-            </div> -->
+            </div>
 
             <!-- <div class="is-size-5 publication-authors">
               <span class="author-block">Institution Name<br>Conferance name and year</span>
@@ -95,7 +91,7 @@
 
                 <!-- Github link -->
                 <span class="link-block">
-                  <a href="https://anonymous.4open.science/r/Proj-2531" target="_blank"
+                  <a href="https://github.com/Auto-RoboticsLab/npt-planner" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -142,7 +138,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Non-prehensile transportation holds significant promise for robotic service applications. However, existing methods often fail to reconcile global navigability in complex scenarios with local reactivity. To bridge this gap, this letter proposes a reactive motion planning framework for non-prehensile transportation using robotic arms in cluttered environments. To adapt to environmental changes, the framework employs a proactive, periodic replanning strategy coupled with a passive, time-to-collision (TTC)-triggered safety mechanism. Both components are underpinned by a hierarchical trajectory generator that utilizes a constrained path planner to provide global geometric guidance for circumventing local minima, followed by a two-stage optimization process. In particular, to enhance computational efficiency, the optimization process incorporates soft penalty terms rather than hard constraints to refine trajectories and promote contact stability throughout the motion. Baseline comparisons validate the navigation advantages of the proposed method, while extensive experiments further characterize the performance boundaries and applicability of this soft-constraint formulation.
+              Non-prehensile transportation holds significant promise for robotic service applications. However, existing methods often struggle to balance global navigability in complex scenarios with local reactivity. To address this, this letter presents a reactive motion planning framework for robotic non-prehensile transportation in cluttered environments. To adapt to environmental changes, the framework employs a proactive periodic replanning strategy coupled with a passive, time-to-collision-triggered safety mechanism. Both components rely on a hierarchical trajectory generator that utilizes a constrained path planner to provide global geometric guidance for circumventing local minima, followed by a two-stage optimization. To enhance computational efficiency, the optimization leverages soft penalties instead of hard constraints to refine trajectories and promote contact stability. Comparative results validate the proposed method's advantages, while extensive experiments characterize the performance boundaries of this soft-constraint formulation. 
             </p>
           </div>
         </div>
@@ -159,7 +155,7 @@
           <img src="static/images/Fig01.jpg" alt="System architecture diagram of the replanning framework" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
           <div class="content has-text-justified has-text-weight-semibold">
             <p>
-              Fig. 2. Risk-adaptive motion planning framework, featuring a dual-triggering mechanism (periodic and safety-driven) and a complete trajectory generation pipeline, which integrates constrained path planning, trajectory parameterization, and trajectory refinement.
+              Fig. 2. Hierarchical motion planning framework featuring periodic and event-driven triggers and a multi-stage trajectory generation pipeline.
             </p>
           </div>
         </div>
@@ -208,7 +204,7 @@
 
         <!-- Subtitle/Description (Updated for the new layout) -->
         <p class="content has-text-justified mt-5 mb-5">
-          This section compares the proposed method with a strong reactive baseline adapted from the MPC approach in <a href="#ref1">[1]</a> to demonstrate the necessity of global guidance.
+          To underscore the necessity of global guidance, our method is compared with a strong reactive baseline adapted from <a href="#ref1">[1]</a>.
         </p>
         <div class="mt-5 mb-5">
           <!-- ROW 1: Scenario 1 Comparison -->
@@ -290,7 +286,7 @@
         <h3 class="title is-3 has-text-centered mb-4">3. Reactivity Assessment in Quasi-Static Environments</h3>
 
         <p class="content has-text-justified mt-5 mb-5">
-          This section evaluates the reactivity of the proposed framework in quasi-static yet intermittently changing environments. The reactive strategies primarily comprise replanning and safe stop planning, as demonstrated below.
+          The reactivity of the proposed framework is evaluated in quasi-static yet intermittently changing environments. The reactive strategies primarily comprise replanning and safe stop planning, as demonstrated below.
         </p>
 
         <div class="columns is-centered mt-5 mb-5">
@@ -379,7 +375,7 @@
         </div>
 
         <p class="content has-text-justified mt-5 mb-5">
-          Beyond point-to-point trials, we perform continuous transportation tasks in cluttered and intermittently changing environments to evaluate sustained reactivity.
+          Beyond point-to-point trials with fixed goals, we also perform continuous transportation tasks toward randomly sampled targets in cluttered and intermittently changing environments to evaluate sustained reactivity.
         </p>
 
         <div class="mt-5 mb-5">
@@ -398,7 +394,7 @@
         <h3 class="title is-3 has-text-centered mb-4">4. Sensitivity Analysis to CoM Position Uncertainty</h3>
         
         <p class="content has-text-justified mt-5 mb-5">
-          Since the trajectory optimization depends solely on the transported object's CoM position, this section investigates the system's sensitivity to positional uncertainty under varying levels of aggressiveness to identify practical performance boundaries. The experimental setup is illustrated in the following figure and videos. Quantitative experimental results are summarized in Table II of the paper.
+          Since trajectory optimization depends solely on the object's CoM position, we investigate the system's sensitivity to positional uncertainty under varying aggressiveness to identify performance boundaries. The experimental setup is illustrated in the following figure and videos. Quantitative experimental results are summarized in Table II of the paper.
         </p>
 
         <div class="columns is-centered mt-5 mb-5">
@@ -528,7 +524,7 @@
         </div>
 
         <p class="content has-text-justified mt-5 mb-5">
-          To further evaluate reactivity and adaptability, we conducted non-prehensile transport of diverse daily objects, including a slender bottle (high tipping risk), milk cartons, and a partially filled water cup. Notably, the implementation relies uniformly on a coarse generic CoM estimate without object-specific parameter tuning.
+          To evaluate reactivity and adaptability, we performed non-prehensile transport of diverse daily objects (e.g., a slender bottle, milk cartons, and a partially filled water cup), all under medium aggressiveness.
         </p>
 
         <div class="mt-5 mb-5">
@@ -567,6 +563,20 @@
                 <iframe class="has-ratio" src="https://www.youtube.com/embed/VUcoDlgwZaQ" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
               </figure>
               <p class="has-text-centered has-text-weight-semibold mt-2">Non-prehensile transportation with frequently changing goal points</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="content has-text-justified mt-5 mb-5">
+          We also evaluated the algorithm's reactivity, stability, and global navigability in cluttered and quasi-static environments.
+        </p>
+
+        <div class="mt-5 mb-5">
+          <div class="columns is-centered">
+            <div class="column">
+              <figure class="image is-16by9">
+                <iframe class="has-ratio" src="https://www.youtube.com/embed/-YsqZAjKiRo" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+              </figure>
             </div>
           </div>
         </div>
@@ -632,6 +642,7 @@
     </div>
   </section>
 
+  <!------------------------------------- 结论 ------------------------------------->
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -639,7 +650,7 @@
           <h2 class="title is-3">7. Conclusion</h2>
           <div class="content has-text-justified">
             <p>
-              This letter proposes a reactive motion planning framework, enabling non-prehensile transportation in cluttered, quasi-static yet intermittently changing environments. Compared to purely reactive SOTA methods, our approach leverages global geometric guidance to effectively circumvent local minima. By employing simplified contact constraints and a hierarchical architecture, our method reduces the computation time for long-horizon trajectory generation from the scale of seconds to the hundred-millisecond range. Furthermore, the performance boundaries resulting from this simplification are rigorously evaluated through extensive experiments. Future work will focus on addressing the aforementioned limitations and enhancing safety while maintaining computational efficiency.
+              This letter proposes a reactive framework for non-prehensile transportation in cluttered, quasi-static yet intermittently changing environments. Compared to existing reactive methods, our approach leverages global guidance to effectively circumvent local minima. Simplified contact constraints and a hierarchical architecture reduce trajectory generation time from seconds to the hundred-millisecond scale. Extensive experiments characterize the resulting performance boundaries. Future work will address the aforementioned limitations while improving efficiency through parallelized computing.
             </p>
           </div>
         </div>
@@ -647,7 +658,23 @@
     </div>
   </section>
 
-  <!-- 参考文献 -->
+  <!------------------------------------- 感谢 ------------------------------------->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Acknowledgment</h2>
+          <div class="content has-text-justified">
+            <p>
+              The authors would like to thank Dr. Luyao Dai and Dr. Zhao Gong for their valuable suggestions on manuscript preparation and experimental design, and Chen Dong for his assistance with experimental data collection.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!------------------------------------- 参考文献 ------------------------------------->
   <section class="section">
     <div class="container is-max-desktop content">
       <h2 class="title has-text-centered">References</h2>
@@ -669,27 +696,19 @@
 </section> -->
 <!--End BibTex citation -->
 
-<!-- <footer class="footer">
+<footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
         </div>
       </div>
     </div>
   </div>
-</footer> -->
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-<!-- End of Statcounter Code -->
+</footer>
 
 </body>
 </html>
